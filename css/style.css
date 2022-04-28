@@ -1,0 +1,410 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular);
+
+/* ============================ Minimal zeroing* =================================== */
+
+ul, li {list-style: none; padding: 0;}
+* {padding: 0; margin: 0; border: 0; box-sizing: border-box;}
+HTML, body {height: 100%;}
+a {text-decoration: none;}
+h1, h2, h3, h4, h5, h6 {font-weight: inherit;font-size: inherit;}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #FF6701;
+    border-radius: 10px;
+}
+
+body {
+    height: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.17;
+    color: rgb(109, 109, 109);
+    background-image: url(../img/bearBG__main.jpg);
+    background-size: contain;
+    background-position: center;
+    background-color: rgb(255, 255, 255);
+}
+
+/* ============================ Desctop =================================== */
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================ Header =================================== */
+
+.header {
+    background-color: #fff;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.header__search {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.burger__content {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    z-index: 105;
+    padding-left: 15px;
+}
+
+.burger__menu {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 12px;
+    cursor: pointer;
+    z-index: 110;
+}
+
+.burger__menu span,
+.burger__menu::before,
+.burger__menu::after {
+    right: 0px;
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    transition: all .3s ease 0s;
+    background-color: rgb(109, 109, 109);
+    
+}
+
+.burger__menu::before,
+.burger__menu::after {
+    content: '';
+}
+
+.burger__menu::before {
+    top: 0;
+}
+
+.burger__menu::after {
+    bottom: 0;
+}
+
+.burger__menu span {
+    top: 50%;
+    transform: scale(1) translateY(-50%);
+}
+
+.burger__menu._active span {
+    transform: scale(0) translateY(-50%);
+}
+
+.burger__menu._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger__menu._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
+.search__panel {
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search__input {
+    height: 30px;
+    width: 140px;
+    padding-left: 30px;
+    border-radius: 15px;
+    border: 1px solid rgb(109, 109, 109);
+    cursor: text;
+}
+
+.search__panel::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translatey(-50%);
+    width: 15px;
+    height: 15px;
+    background-image: url(../img/search_icon.svg);
+}
+
+.header__content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 50px;
+}
+
+.header__chanel {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.chanel__avatar {
+
+}
+
+.chanel__avatar img {
+    border-radius: 50%;
+}
+
+.chanel__name {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.chanel__title {
+    font-weight: bold;
+    color: #000;
+}
+
+.chanel_text {
+    font-size: 12px;
+}
+
+.header__info {
+    display: flex;
+    align-items: center;
+}
+
+.header__info img {
+    height: 50px;
+}
+
+.header__menu {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header__menu span {
+    border: 2px solid #6d6d6d;
+    border-radius: 50%;
+}
+
+.header__menu span:not(:last-child) {
+    margin-bottom: 2px;
+}
+
+
+/* ============================ Main block =================================== */
+.article {
+    flex: 1 1 auto;
+    display: flex;
+}
+
+/* ============================ Users List =================================== */
+
+.navigation {
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 5px;
+    overflow: auto;
+}
+
+.contact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.contact:hover {
+    background-color: rgb(137, 119, 240);
+}
+
+.contact__avatar img {
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: #fff;
+}
+
+.contact__body {
+    flex: 1 1 auto;
+    padding-left: 5px;
+}
+
+.contact__body-title {
+    font-weight: bold;
+    font-size: 12px;
+    width: 100px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact__info {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.contact__info-time {
+    font-size: 10px;
+}
+
+.contact__info-count {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background-color: rgb(8, 36, 196);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 3px;
+}
+
+/* ============================ Chat =================================== */
+
+.right_panel {
+    background-color: transparent;
+    width: calc(100% - 200px);
+    display: flex;
+    flex-direction: column;
+}
+
+.right__panel_content {
+    height: calc(100vh - 150px);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 10px 10px 0 10px;
+    overflow: auto;
+}
+
+.massage__block {
+    display: flex;
+    align-items: center;
+}
+
+.massage__block img{
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: #fff;
+    margin-right: 10px;
+}   
+
+.massage__block-me, .massage__block-other {
+    max-width: 100%;
+    background-color: #fff;
+    padding: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.massage__block-me {
+    border-radius: 10px 10px 0px 10px;
+}
+
+.massage__block-other {
+    border-radius: 10px 10px 10px 0px;
+}
+
+.massage__block-title {
+    font-weight: bold;
+    font-style: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.massage__block-text {
+    font-size: 14px;
+    color: #000;
+}
+
+.massage__block-time {
+    font-size: 14px;
+    color: #FF6701;
+    padding-left: 10px;
+}
+
+
+
+/* ============================ Sand Massage =================================== */
+
+.footer {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__sandMassage {
+    width: 600px;
+    height: 50px;
+    padding: 5px 20px;
+    background-color: #fff;
+    border-radius: 10px 10px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sandMassage-input {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    background-color: transparent;
+    outline: none;
+}
+
+.footer__sendMassage_micro {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(8, 36, 196);
+    margin-left: 20px;
+    text-align: center;
+    padding-top: 13px;
+    cursor: pointer;
+    
+}
+
+.footer__sendMassage_micro img {
+    transition: all .4s ease;
+}
+.footer__sendMassage_micro img:hover {
+    transform: scale(1.5);
+}
